@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import Hero from './Hero';
+import { useEffect, useState } from 'react'
 import Footer from './Footer';
 import { showExercises } from '../utils/costants';
 import Body from './Body';
+import Search from './Search';
 function Home() {
     const[exercise,setExercise] = useState([])
     
@@ -23,6 +23,7 @@ function Home() {
   return (
     <div>
         <Body/>
+        <Search/>
         <Footer/>
     </div>
   )

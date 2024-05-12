@@ -13,3 +13,11 @@
   display: flex;
   padding: 30px;
 }
+
+.bg-photo{
+  background-image: url("https://img.freepik.com/free-photo/3d-gym-equipment_23-2151114204.jpg?t=st=1715499184~exp=1715502784~hmac=af22cc542ddbbc6ee450dd1dd976fb3da6808f931a22805c3ee2e78a29162bf3&w=1060");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-color: rgba(0, 0, 0, 0.9);  */
+}

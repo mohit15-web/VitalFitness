@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Footer() {
   return (
@@ -8,7 +7,7 @@ function Footer() {
           <div className="w-full p-6 md:w-1/2 lg:w-5/12">
             <div className="flex h-full flex-col justify-between">
               <div className="mb-4 inline-flex items-center">
-                <span className="ml-4 text-2xl font-bold">VitalFitness</span>
+                <span className="ml-4 text-2xl font-bold tracking-widest">VitalFitness</span>
               </div>
               
             </div>

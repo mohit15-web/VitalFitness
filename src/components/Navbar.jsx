@@ -1,18 +1,19 @@
-import React from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const menuItems = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
     name: "Exercise",
-    href: "#",
+    href: "/exercise",
   },
   {
     name: "Contact",
-    href: "#",
+    href: "/footer",
   },
 ];
 
@@ -22,21 +23,20 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
       <div className="w-full bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
           <div className="inline-flex items-center space-x-2">
-            <span className="font-bold text-2xl tracking-widest">VitalFitness</span>
+            <span className="font-bold text-2xl tracking-widest">
+              VitalFitness
+            </span>
           </div>
           <div className="hidden lg:block">
             <ul className="ml-12 inline-flex space-x-8">
               {menuItems.map((item) => (
                 <li key={item.name}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="inline-flex items-center text-xl font-semibold text-gray-800 hover:text-gray-900"
                   >
                     {item.name}
-                    <span>
-                      <ChevronDown className="ml-2 h-4 w-4" />
-                    </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,6 +103,10 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  toggleMenu: PropTypes.func,
 };
 
 export default Navbar;

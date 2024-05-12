@@ -1,12 +1,16 @@
-import React from 'react'
 import Home from './components/Home'
 import Exercise from './components/Exercise'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
    <div>
-    {/* <Home/> */}
-    <Exercise/>
+    <BrowserRouter>
+    <Routes>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/exercise' element={<Exercise/>}/>
+    </Routes>
+    </BrowserRouter>
    </div>
   )
 }
