@@ -1,43 +1,24 @@
-import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { Loader } from "../Loader/Loader";
+import useFetch from "../utils/costants";
 function Exercise() {
-  const [allExcercise, setAllExcercise] = useState([]);
-  const fetchData = async () => {
-    const url = "https://exercisedb.p.rapidapi.com/exercises?limit=10";
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "c6b77b25a9msh4fe51e21727aad3p171430jsn50b8fc836df7",
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json();
-      console.log(result);
-      setAllExcercise(result);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  const  [data] = useFetch({
+    method: "get",
+     url : "https://exercisedb.p.rapidapi.com/exercises",
+  });
+  
   const handleClick = () => {
     console.log("card Clicked");
   }
 
+  console.log(data);
   return (
     <>
       <Navbar />
       <div className="flex justify-center items-center flex-col">
         <h1 className="text-3xl font-semibold my-5 tracking-wide">All Excercises</h1>
         <div className="flex justify-center items-center flex-wrap gap-8">
-          {allExcercise.length > 0 ? allExcercise.map((item) => (
+          {data.length > 0 ? data.map((item) => (
             <div className="flex flex-col justify-center items-center border rounded-xl shadow-md cursor-pointer" key={item.name} onClick={handleClick}>
               <img src={item.gifUrl} alt="Animated GIF" />
               <div>
