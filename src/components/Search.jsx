@@ -22,7 +22,7 @@ function Search() {
     
       const  [data] = useFetch({
         method: "get",
-         url : "https://exercisedb.p.rapidapi.com/exercises",
+         url : "https://exercisedb.p.rapidapi.com/exercises?limit=20",
       });
 
       const handleSearch = () => {

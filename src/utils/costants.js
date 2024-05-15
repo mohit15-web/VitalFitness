@@ -11,9 +11,9 @@ function useFetch({ method = "get", url = ""}) {
       method: method,
       url: url,
       headers: {
-        "X-RapidAPI-Key": "c6b77b25a9msh4fe51e21727aad3p171430jsn50b8fc836df7",
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': '8ce4b5dc5amshd2616c289702ce1p1ffeffjsna5ad3d2de041',
+        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+      }
     })
       .then((res) => {
         setData(res.data);
